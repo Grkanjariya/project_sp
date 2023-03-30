@@ -1,0 +1,81 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'test3.css' %}">
+    <title>Register for doctors</title>
+</head>
+<body>
+    <form action="register_doctor" method="post">
+        {% csrf_token %}
+          <div class="form-group row">
+              <label class="col-sm-4 col-lg-4">
+                  Doctor id
+              </label>
+              <div class="col-sm-8 col-lg-8">
+                  <input type="text"id="d_id" name="d_id"class="form-control"
+                  placeholder="Name"required>
+              </div>
+          </div>
+          <!---->
+          <div class="form-group row">
+            <label class="col-sm-4 col-lg-4">
+                Doctor name
+            </label>
+            <div class="col-sm-8 col-lg-8">
+                <input type="text"id="d_name"name="d_name"class="form-control"
+                placeholder="123"required>
+            </div>
+        </div>
+        <!---->
+        <div class="form-group row">
+            <label class="col-sm-4 col-lg-4">
+              qualifications
+            </label>
+            <div class="col-sm-8 col-lg-8">
+                <input type="text"id="qualifications"name="qualifications"class="form-control">
+            </div>
+        </div>
+        <!---->
+        <div class="form-group row">
+            <label class="col-sm-4 col-lg-4">
+               experience(in years)
+            </label>
+            <div class="col-sm-8 col-lg-8">
+                <input type="int"id="experience"name="experience"class="form-control">
+               </div>
+        </div>
+        <!---->
+        <div class="form-group row">
+            <label class="col-sm-4 col-lg-4">
+               Rating(in stars)
+            </label>
+            <div class="col-sm-8 col-lg-8">
+                <input type="int"id="Rating"name="Rating" class="form-control" required></input>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-lg-4">
+               No_of_awards
+            </label>
+            <div class="col-sm-8 col-lg-8">
+                <input type="int"id="No_of_awards"name="No_of_awards" class="form-control" required></input>
+            </div>
+        </div>
+        
+        <!---->
+        <div class="form-group row justify-content-end">
+            <div class="col-sm-5">
+                <button type="submit"class="btn btn-form">
+                    Confirm
+                </button>
+            </div>
+        </div>
+
+      </form>
+</body>
+</html>

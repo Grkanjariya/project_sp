@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN IN PAGE</title>
+    <link rel="stylesheet" href="{% static 'test3.css' %}">
+</head>
+
+<style>
+    body{
+        background-image: url(static/image3.4.jpg);
+        /* background-color: aqua; */
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+
+<body>
+    <div class="content">
+        <div class="form">
+            <form action="login" method="post">
+
+                {% csrf_token %}
+
+            <h2>Login Here</h2>
+            <input type="text" name="d_id" placeholder="Enter Doctor Id Here">
+            <input type="text" name="d_name" placeholder="Enter Doctor Name Here">
+            <!-- <input type="" name="" placeholder="Enter Mobile no. Here"> -->
+            <button class="btnn"><a href="#">Login</a></button>
+            <!-- <input type="submit"> -->
+
+            <!-- <p class="link">If you have not register click here..<br>
+             
+            </p>
+            <button class="btnn"> <a href="{% url 'register' %}">Sign up </a></button> -->
+            <!-- <p class="liw">Log in with</p> -->
+        </form>
+        <div>
+            {% for message in messages %}
+            <h3> {{message}} </h3>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
